@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { StyleSheet, Text, View, FlatList, Dimensions } from 'react-native'; // Import Dimensions
+import { StyleSheet, Text, View, FlatList, Dimensions } from 'react-native'; 
 import slides from '../slides';
 import Onboardingitem from './Onboardingitem';
 import { useNavigation } from '@react-navigation/native';
@@ -7,13 +7,13 @@ import { useNavigation } from '@react-navigation/native';
 const Onboarding = () => {
   const navigation = useNavigation();
 
-  // Use useEffect to navigate after a delay
+ 
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigation.navigate('Login'); // Redirect to the Login screen after 3 seconds
-    }, 3000); // 3000 milliseconds = 3 seconds
+      navigation.navigate('Login'); 
+    }, 3000); 
 
-    // Clear the timer when the component unmounts
+    
     return () => clearTimeout(timer);
   }, [navigation]);
 
@@ -26,13 +26,13 @@ const Onboarding = () => {
         showsHorizontalScrollIndicator={false}
         pagingEnabled
         bounces={false}
-        style={styles.flatList} // Apply styles to the FlatList
+        style={styles.flatList}
       />
     </View>
   );
 }
 
-const windowWidth = Dimensions.get('window').width; // Get the screen width
+const windowWidth = Dimensions.get('window').width; 
 
 const styles = StyleSheet.create({
   container: {
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
   },
   flatList: {
     paddingTop:0,
-    width: windowWidth, // Set the width of the FlatList to the screen width
+    width: windowWidth, 
   },
 });
 

@@ -2,15 +2,14 @@ import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 
 const ProfilePage = () => {
-  // You can fetch user information from an API or a state here
+  
 
-  // For example, you can define user information like this:
   const user = {
     name: 'Your Name',
     phoneNumber: '123-456-7890',
     aadharCardVerified: true,
     licenseVerified: true,
-    // Add more user information here
+   
   };
 
   return (

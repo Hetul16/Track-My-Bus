@@ -24,20 +24,21 @@ const Login = () => {
 
   const handleHomePress = () => {
 
-    const input = NumberPlate.trim(); // Remove leading/trailing spaces
-    const state = input.substring(0, 2); // First two characters, "HP"
-    const district = input.substring(2, 4); // Next two characters, "02"
-    const characters = input.substring(4, 6); // Next two characters, "de"
-    const numbers = input.substring(6); // The rest, "3654"
+    const input = NumberPlate.trim(); 
+    const state = input.substring(0, 2); 
+    const district = input.substring(2, 4); 
+    const characters = input.substring(4, 6);
+    const numbers = input.substring(6); 
 
     setState(state);
     setDistrict(district);
     setCharacters(characters);
     setNumbers(numbers);
 
-
-
-    navigation.navigate('HomePage');
+    navigation.navigate('Home', {
+      numberPlate: NumberPlate,
+      phoneNumber: phonenumber,
+    });
   };
 
   const handlePhoneNumberChange = (text) => {
@@ -185,7 +186,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   invalidInput: {
-    borderColor: 'red', // Change border color to red for invalid input
+    borderColor: 'red', 
   },
   
   errorText: {

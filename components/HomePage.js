@@ -10,14 +10,13 @@ const HomePage = () => {
     latitude: 51.505,
     longitude: -0.09,
   }); // Initial marker coordinates
-  const [newLatitude, setNewLatitude] = useState(''); // State for new latitude input
-  const [newLongitude, setNewLongitude] = useState(''); // State for new longitude input
-  const [sourceCoordinates, setSourceCoordinates] = useState(null); // Source marker coordinates
-  const [destinationCoordinates, setDestinationCoordinates] = useState(null); // Destination marker coordinates
-  const [busCoordinates, setBusCoordinates] = useState(null); // Bus marker coordinates
+  const [newLatitude, setNewLatitude] = useState(''); 
+  const [newLongitude, setNewLongitude] = useState(''); 
+  const [sourceCoordinates, setSourceCoordinates] = useState(null); 
+  const [destinationCoordinates, setDestinationCoordinates] = useState(null); 
+  const [busCoordinates, setBusCoordinates] = useState(null); 
 
   useEffect(() => {
-    // Automatically update the map's region to focus on the marker whenever coordinates change
     if (newLatitude && newLongitude) {
       setMarkerCoordinates({
         latitude: parseFloat(newLatitude),
@@ -30,7 +29,7 @@ const HomePage = () => {
     <View style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity
-          onPress={() => setMenuOpen(!menuOpen)} // Toggle menu open/close
+          onPress={() => setMenuOpen(!menuOpen)}
           style={styles.burgerIcon}
         >
           <Image
@@ -44,7 +43,6 @@ const HomePage = () => {
         <View style={styles.menu}>
           <TouchableOpacity
             onPress={() => {
-              // Navigate to the ProfilePage when the profile picture is clicked
               navigation.navigate('ProfilePage');
             }}
           >
@@ -56,7 +54,6 @@ const HomePage = () => {
           <Text style={styles.name}>Your Name</Text>
           <TouchableOpacity
             onPress={() => {
-              // Handle clicking on menu items (e.g., navigate to other screens)
               navigation.navigate('AssignedBusScreen');
             }}
             style={styles.menuItem}
@@ -65,7 +62,7 @@ const HomePage = () => {
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => {
-              // Handle clicking on menu items (e.g., navigate to other screens)
+              
               navigation.navigate('CommunicationCenterScreen');
             }}
             style={styles.menuItem}
@@ -74,7 +71,6 @@ const HomePage = () => {
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => {
-              // Handle clicking on menu items (e.g., navigate to other screens)
               navigation.navigate('EmergencyFeaturesScreen');
             }}
             style={styles.menuItem}

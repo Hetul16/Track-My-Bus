@@ -17,8 +17,7 @@ const Signup = () => {
   };
 
   const handleSignupPress = () => {
-    // Handle the signup logic here
-    // You can replace this with your actual signup code
+  
   };
 
   return (
